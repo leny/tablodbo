@@ -1,0 +1,59 @@
+{
+  "name": "tablodbo",
+  "version": "0.0.1",
+  "description": "A CLI-dashboard for your npm packages",
+  "keywords": [
+    "commandline",
+    "cli",
+    "terminal",
+    "npm",
+    "statistics",
+    "dashboard",
+    "dependencies",
+    "counter"
+  ],
+  "homepage": "https://github.com/leny/tablodbo",
+  "author": {
+    "name": "leny",
+    "email": "info@flatland.be",
+    "url": "http://leny.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leny/tablodbo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leny/tablodbo/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/leny/tablodbo/blob/master/LICENSE-MIT"
+    }
+  ],
+  "bin": {
+    "tablodbo": "lib/cli.js"
+  },
+  "main": "lib/tablodbo",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.6.0",
+    "grunt": "^0.4.5",
+    "grunt-clear": "^0.2.1",
+    "grunt-coffeelint": "0.0.13",
+    "grunt-contrib-coffee": "^0.11.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "matchdep": "^0.3.0"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "commander": "^2.3.0",
+    "simple-spinner": "0.0.2"
+  }
+}
