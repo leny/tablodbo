@@ -1,6 +1,6 @@
 # tablodbò
 
-[![NPM version](http://img.shields.io/npm/v/tablodo.svg)](https://www.npmjs.org/package/tablodo) ![Dependency Status](https://david-dm.org/leny/tablodo.svg) ![Downloads counter](http://img.shields.io/npm/dm/tablodo.svg)
+[![NPM version](http://img.shields.io/npm/v/tablodbo.svg)](https://www.npmjs.org/package/tablodbo) ![Dependency Status](https://david-dm.org/leny/tablodbo.svg) ![Downloads counter](http://img.shields.io/npm/dm/tablodbo.svg)
 
 > A CLI-dashboard for your npm packages
 
@@ -8,29 +8,29 @@
 
 ## How it works ?
 
-_TODO_
+For each npm package of the given user, **tablodbò** will outputs these informations : name, version, build status (on Travis), dependencies update status, dev dependencies update status, last month's downloads on npm, npm stars and dependents packages amount.
 
 ## Usage as node.js module
 
 ### Installation
 
-To use **tablodo** as a node.js module, install it first to your project.
+To use **tablodbò** as a node.js module, install it first to your project.
 
-    npm install --save tablodo
+    npm install --save tablodbo
     
 ### Usage
 
-Using **tablodo** is simple, after require it : 
+Using **tablodbò** is simple, after require it : 
 
-    tablodo = require( "tablodo" );
+    tablodbo = require( "tablodbo" );
     
-    tablodo( "leny", function( oError, aInfos ) {
+    tablodbo( "leny", function( oError, aInfos ) {
         // do awesome things here.
     } );
     
 ### Signature
 
-    tablodo( sNPMUser [, fCallback ] ] )
+    tablodbo( sNPMUser [, fCallback ] ] )
     
 #### Arguments
 
@@ -43,21 +43,23 @@ Using **tablodo** is simple, after require it :
 
 ### Installation
 
-To use **tablodo** as a command-line tool, it is preferable to install it globally.
+To use **tablodbò** as a command-line tool, it is preferable to install it globally.
 
-    (sudo) npm install -g tablodo
+    (sudo) npm install -g tablodbo
 
 ### Usage
 
-Using **tablodo** is simple: 
+Using **tablodbò** is simple: 
 
-    tablodo [options] <npm-user>
+    tablodbo [options] <npm-user>
     
     Options:
 
         -h, --help             output usage information
         -V, --version          output the version number
     
+If no user is given, **tablodbò** will try to guess the current npm user logged on the system.
+
 #### Options
 
 ##### help (`-h`,`--help`)
@@ -66,7 +68,12 @@ Output usage information.
 
 ##### version (`-v`,`--version`)
 
-Output **tablodo**' version number.
+Output **tablodbò**' version number.
+
+#### Sample
+
+**tablodbò** outputs his results in a table, like this :  
+![tablodbò sample results](https://raw.githubusercontent.com/leny/tablodbo/master/sample.png)
 
 ## Contributing
 
@@ -74,12 +81,12 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-* **0.0.1**: Starting project, initial release (*25/09/14*)
+* **0.1.0**: Initial release (*26/09/14*)
 
 ### TODO
     
 - [ ] add option to exclude information
-- [ ] use current local npm user if no one given
+- [x] use current local npm user if no one given
 
 ## License
 Copyright (c) 2014 Leny  
