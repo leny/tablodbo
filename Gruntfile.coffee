@@ -79,3 +79,8 @@ module.exports = ( grunt ) ->
     "coffee"
     "concat"
   ]
+
+  grunt.registerTask "work", [
+    "default"
+    "watch"
+  ]
