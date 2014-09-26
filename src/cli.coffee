@@ -12,9 +12,12 @@
 
 pkg = require "../package.json"
 
-path = require "path"
+tablodbo = require "./tablodbo.js"
+exec = require( "child_process" ).exec
 chalk = require "chalk"
-error = chalk.bold.red
+error = ( oError ) ->
+    console.log chalk.bold.red "✘ #{ oError }."
+    process.exit 1
 ( spinner = require "simple-spinner" )
     .change_sequence [
         "◓"
@@ -32,19 +35,22 @@ error = chalk.bold.red
 # --- get npm user
 
 unless sNPMUser = program.args[ 0 ]
-    console.log error "✘ No NPM username given!"
-    process.exit 1
+    exec "npm whoami", ( oError, sSTDOut ) ->
+        error oError if oError
+        sNPMUser = sSTDOut.trim()
+        fProcess sNPMUser
+else
+    fProcess sNPMUser
 
 # --- get tablodbo informations
 
-spinner.start 50
-require( "./tablodbo.js" ) sNPMUser, ( oError, aInfos ) ->
-    spinner.stop()
-    if oError
-        console.log error "✘ #{ oError }."
-        process.exit 1
+fProcess = ( sUser ) ->
+    spinner.start 50
+    tablodbo sUser, ( oError, aInfos ) ->
+        spinner.stop()
+        error oError if oError
 
-    console.log aInfos
+        console.log aInfos
 
-    process.exit 0
+        process.exit 0
 
