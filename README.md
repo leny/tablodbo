@@ -1,6 +1,6 @@
 # tablodbò
 
-[![NPM version](http://img.shields.io/npm/v/tablodbo.svg)](https://www.npmjs.org/package/tablodbo) ![Dependency Status](https://david-dm.org/leny/tablodbo.svg) ![Downloads counter](http://img.shields.io/npm/dm/tablodbo.svg)
+[![NPM version](http://img.shields.io/npm/v/tablodbo.svg)](https://www.npmjs.org/package/tablodbo) ![Dependency Status](https://david-dm.org/leny/tablodbo.svg) ![Downloads counter](http://img.shields.io/npm/dm/tablodbo.svg) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 > A CLI-dashboard for your npm packages
 
